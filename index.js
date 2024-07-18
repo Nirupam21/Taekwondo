@@ -4,6 +4,7 @@ const path = require('path')
 const ejsLayout = require('express-ejs-layouts')
 //const url = 'mongodb://127.0.0.1/students'
 const url = "mongodb+srv://nirupam21:nirupam21@cluster0.wdgr9rl.mongodb.net/"
+const PORT = process.env.PORT || 9000;
 
 const app = express()
 
@@ -28,6 +29,6 @@ app.use('/', studentRouter)
 
 app.use(express.static('views'))
 
-app.listen(9000, () => {
+app.listen(PORT, () => {
     console.log('Server Started')
 })
