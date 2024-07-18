@@ -1,0 +1,54 @@
+<body onload="updatechoices()">
+<h1 class="mt-5 mb-4" style="text-align: center;">Update Student <%= student.name %></h1>
+
+<form action="/update/<%= student.id %>" method="post" class="form_style">
+    <div class="mb-3">
+        <label for="name" class="form-label">Name</label>
+        <input type="text" class="form-control" id="name" name="name" value="<%= student.name %>">
+    </div>
+    <div class="mb-3">
+        <label for="gender" class="form-label">Gender</label>
+        <select name="gender" id="gender" onchange="updateOptions()">
+            <option value="<%= student.gender %>"><%= student.gender %></option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+        </select>
+    </div>
+    <div class="mb-3">
+        <label for="age" class="form-label">Age Category</label>
+        <select name="age" id="age" onchange="updateOptions()">
+            <option value="<%= student.ageCategory %>"><%= student.ageCategory %></option>
+            <option value="Fresher PEE WEE">Fresher PEE WEE</option>
+            <option value="PEE WEE">PEE WEE</option>
+            <option value="Fresher Sub Junior">Fresher Sub Junior</option>
+            <option value="Sub Junior">Sub Junior</option>
+            <option value="Fresher Cadet">Fresher Cadet</option>
+            <option value="Cadet">Cadet</option>
+            <option value="Fresher Junior">Fresher Junior</option>
+            <option value="Junior">Junior</option>
+            <option value="Fresher Senior">Fresher Senior</option>
+            <option value="Senior">Senior</option>
+            <option value="Senior Black Belt">Senior Black Belt</option>
+        </select>
+    </div>
+    <div class="mb-3">
+        <label for="weight" class="form-label">Weight Category</label>
+        <select name="weight" id="weight">
+            <option value="<%= student.weightCategory %>"><%= student.weightCategory %></option>
+            <!-- <option value="<%= student.weightCategory %>"><%= student.weightCategory %></option> -->
+          </select>
+    </div>
+    <div class="mb-3">
+        <label for="club" class="form-label">Club</label>
+        <input type="text" class="form-control" id="club" name="club" value="<%= student.club %>">
+    </div>
+    <button type="submit" class="btn btn-primary">Update</button>
+</form>
+
+<style>
+    .form_style{
+        text-align: center;
+    }
+</style>
+</body>
+

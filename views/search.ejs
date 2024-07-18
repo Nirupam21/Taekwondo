@@ -1,0 +1,50 @@
+<h1 class="mt-5 mb-4" style="text-align: center;">Advanced Search</h1>
+
+<% if(message) { %>
+    <div class="alert alert-dismissible fade show alert-<%= type %>" role="alert">
+        <button class="btn-close" type="button" data-bs-dismiss="alert" 
+        aria-label="close" onclick="this.parentElement.style.display='none';"></button>
+        <strong><%= message %></strong>
+    </div>
+<% } %>
+
+<form action="/category" method="post" class="form_style">
+    <div class="mb-3">
+        <label for="gender" class="form-label">Gender</label>
+        <select name="gender" id="gender" onchange="updateOptions()">
+            <option value="select">Select</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+        </select>
+    </div>
+    <div class="mb-3">
+        <label for="age" class="form-label">Age Category</label>
+        <select name="age" id="age" onchange="updateOptions()">
+            <option value="Fresher PEE WEE">Fresher PEE WEE</option>
+            <option value="PEE WEE">PEE WEE</option>
+            <option value="Fresher Sub Junior">Fresher Sub Junior</option>
+            <option value="Sub Junior">Sub Junior</option>
+            <option value="Fresher Cadet">Fresher Cadet</option>
+            <option value="Cadet">Cadet</option>
+            <option value="Fresher Junior">Fresher Junior</option>
+            <option value="Junior">Junior</option>
+            <option value="Fresher Senior">Fresher Senior</option>
+            <option value="Senior">Senior</option>
+            <option value="Senior Black Belt">Senior Black Belt</option>
+        </select>
+    </div>
+    <div class="mb-3">
+        <label for="weight" class="form-label">Weight Category</label>
+        <select name="weight" id="weight">
+            <option value="select">Select</option>
+        </select>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Search</button>
+</form>
+
+<style>
+    .form_style{
+        text-align: center;
+    }
+</style>
