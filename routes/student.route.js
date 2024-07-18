@@ -4,6 +4,7 @@ const router = express.Router()
 const Student = require("../models/sudent.model")
 const puppeteer = require('puppeteer')
 const ejs = require('ejs')
+require('dotenv').config()
 
 router.get('/', async(req,res) => {
        try{
@@ -63,7 +64,18 @@ router.post('/fixture', async(req, res) => {
                if(count == 2 || count == 4 || count == 8 || count == 16 || count == 32 || count == 64 || count == 128){
                     let browser
                     (async () => {
-                         browser = await puppeteer.launch();
+                         browser = await puppeteer.launch({
+                              args: [
+                                   "--disable-setuid-sandbox",
+                                   "--no-sandbox",
+                                   "--single-process",
+                                   "--no-zygote",
+                              ],
+                              executablePath: 
+                                   process.env.NODE_ENV === 'production' 
+                                   ? process.env.PUPPETEER_EXECUTABLE_PATH
+                                   :puppeteer.executablePath(),
+                         });
                          const [page] = await browser.pages();
                          const html = await ejs.renderFile("./views/fixture1_manual.ejs", {count, title: "Fixture", weightCategory, gender, ageCategory});
                          await page.setContent(html);
@@ -108,8 +120,31 @@ router.post('/fixture', async(req, res) => {
                     }
                     let browser
                     (async () => {
-                         browser = await puppeteer.launch();
-                         const [page] = await browser.pages();
+                         browser = await puppeteer.launch({
+                              args: [
+                                   "--disable-setuid-sandbox",
+                                   "--no-sandbox",
+                                   "--single-process",
+                                   "--no-zygote",
+                              ],
+                              executablePath: 
+                                   process.env.NODE_ENV === 'production' 
+                                   ? process.env.PUPPETEER_EXECUTABLE_PATH
+                                   :puppeteer.executablePath(),
+                         });
+                         const [page] = await browser.pages({
+                              args: [
+                                   "--disable-setuid-sandbox",
+                                   "--no-sandbox",
+                                   "--single-process",
+                                   "--no-zygote",
+                              ],
+                              executablePath: 
+                                   process.env.NODE_ENV === 'production' 
+                                   ? process.env.PUPPETEER_EXECUTABLE_PATH
+                                   :puppeteer.executablePath(),
+
+                         });
                          const html = await ejs.renderFile("./views/fixture2_manual.ejs", {n, title: "Fixture", weightCategory, gender, ageCategory});
                          await page.setContent(html);
                          const pdf = await page.pdf({format: "A4"});
@@ -155,7 +190,18 @@ router.post('/fixture', async(req, res) => {
                if(count == 2 || count == 4 || count == 8 || count == 16 || count == 32 || count == 64 || count == 128){
                     let browser
                     (async () => {
-                         browser = await puppeteer.launch();
+                         browser = await puppeteer.launch({
+                              args: [
+                                   "--disable-setuid-sandbox",
+                                   "--no-sandbox",
+                                   "--single-process",
+                                   "--no-zygote",
+                              ],
+                              executablePath: 
+                                   process.env.NODE_ENV === 'production' 
+                                   ? process.env.PUPPETEER_EXECUTABLE_PATH
+                                   :puppeteer.executablePath(),
+                         });
                          const [page] = await browser.pages();
                          const html = await ejs.renderFile("./views/fixture1.ejs", {students, count, title: "Fixture", weightCategory, gender, ageCategory});
                          await page.setContent(html);
@@ -217,7 +263,18 @@ router.post('/fixture', async(req, res) => {
           
                     let browser
                     (async () => {
-                         browser = await puppeteer.launch();
+                         browser = await puppeteer.launch({
+                              args: [
+                                   "--disable-setuid-sandbox",
+                                   "--no-sandbox",
+                                   "--single-process",
+                                   "--no-zygote",
+                              ],
+                              executablePath: 
+                                   process.env.NODE_ENV === 'production' 
+                                   ? process.env.PUPPETEER_EXECUTABLE_PATH
+                                   :puppeteer.executablePath(),
+                         });
                          const [page] = await browser.pages();
                          const html = await ejs.renderFile("./views/fixture2.ejs", {notBye, bye, n, title: "Fixture", weightCategory, gender, ageCategory});
                          await page.setContent(html);
