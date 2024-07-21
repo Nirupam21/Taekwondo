@@ -34,7 +34,7 @@
                                 <br>
                             <% } %>
                             <!-- <a><%= notBye.name %> (<%= notBye.club %>)</a> -->
-                            <textarea rows="4" cols="15"><%= notBye.name %> (<%= notBye.club %>)</textarea>
+                            <textarea rows="3" cols="15"><%= notBye.name %> (<%= notBye.club %>)</textarea>
                             <!-- <input type="text" value="<%= notBye.name %>(<%= notBye.club %>)" fname="fname" size="22" readonly>  -->
                             <% c++ %>   
                     <% }) %>
@@ -50,7 +50,7 @@
                         <br>
                     <% } %>
                     <% for(let k=0; k < c; k++) { %>
-                        <textarea rows="4" cols="15"></textarea>
+                        <textarea rows="3" cols="15"></textarea>
                         <!-- <input type="text" id="fname" name="fname" size="18"> -->
                         <% for(let l=0; l < b; l++) { %>
                             <br>
@@ -58,7 +58,7 @@
                     <% } %>
                     <% bye.forEach(bye => { %>
                         <!-- <a><%= bye.name %> (<%= bye.club %>)</a> -->
-                        <textarea rows="4" cols="15"><%= bye.name %> (<%= bye.club %>)</textarea>
+                        <textarea rows="3" cols="15"><%= bye.name %> (<%= bye.club %>)</textarea>
                         <!-- <input type="text" value="<%= bye.name %> (<%= bye.club %>)" name="fname" size="22"readonly>   -->
                         <% for(let k=0; k < b; k++) { %>
                             <br>
@@ -71,8 +71,8 @@
                 <% n /= 2 %>
                 <!-- <% c = n %> -->
                     <% if(n >= 1) { %>
-                        <% let j=1 %>
-                        <% let b=2 %>
+                        <% let j=2 %>
+                        <% let b=8 %>
                         <% while(n >= 1) { %>
                             <td>
                             <% a += j %>
@@ -82,7 +82,7 @@
                             <% } %>
                             <% j *= 2 %>
                             <% while(i != (n+1)) { %>
-                                <textarea rows="4" cols="15"></textarea>
+                                <textarea rows="3" cols="15"></textarea>
                                 <% i++ %>
                                 <% for(let k=0; k < b; k++) { %>
                                     <br>
@@ -100,7 +100,7 @@
 
     <div class="container">
         <h4><b>Medalists</b></h4>
-        <p>Gold : &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; Silver : &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; Bronze 1 : &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; Bronze 2 : </p>
+        <p>Gold : &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; Silver : &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; Bronze 1 : &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; Bronze 2 : </p>
     </div>
     <style>
         .container{
@@ -110,6 +110,11 @@
         /* #tblstudents{
             transform: rotateZ(90deg);
         } */
+        textarea {
+            box-sizing: border-box;
+            border: 4px solid;
+            border-radius: 4px;
+        }
 
     </style>
  

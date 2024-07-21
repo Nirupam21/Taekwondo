@@ -32,7 +32,7 @@
                             <% for(let k=0; k < a; k++) { %>
                                 <br>
                             <% } %>
-                            <textarea rows="4" cols="15"></textarea>
+                            <textarea rows="3" cols="15"></textarea>
                             
                         <% c++ %>     
                     <% } %>
@@ -50,7 +50,7 @@
                             <% } %>
                             <% j *= 2 %>
                             <% while(i != (c+1)) { %>
-                                <textarea rows="4" cols="15"></textarea>
+                                <textarea rows="3" cols="15"></textarea>
                                 <% i++ %>
                                 <% for(let k=0; k < b; k++) { %>
                                     <br>
@@ -68,11 +68,16 @@
 
     <div class="container">
         <h4><b>Medalists</b></h4>
-        <p>Gold : &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; Silver : &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; Bronze 1 : &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; Bronze 2 : </p>
+        <p>Gold : &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; Silver : &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; Bronze 1 : &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; Bronze 2 : </p>
     </div>
     <style>
         .container{
             margin: 0px;
+        }
+        textarea {
+            box-sizing: border-box;
+            border: 4px solid;
+            border-radius: 4px;
         }
     </style>
 
